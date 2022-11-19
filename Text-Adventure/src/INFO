@@ -1,0 +1,24 @@
+public void setPlayerLevel() {
+		int turn;
+		if (totalExp <= 70) {
+			turn = 1;
+		} else {
+			turn = 2;
+		}
+		
+		if (turn == 1) {
+			levelUpLimit += levelUpLimit;
+			playerLevel ++;
+			
+		} else {
+			levelUpLimit += levelUpLimit;
+			levelUpLimit += levelIncrease;
+			playerLevel ++;
+		}
+		
+		
+		if (playerLevel > 10) {
+				playerLevel = 10;
+		}
+	}
+	

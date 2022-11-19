@@ -1,0 +1,215 @@
+public void event1() {
+		do {
+			System.out.println();
+			Misc.printSeperator(30);
+			Plot.songVillage();
+			playerChoice =  getPlayerChoice(0, 9);
+			switch(playerChoice) {
+			case 0:
+				System.out.println();
+				player.playerStauts();
+				break;
+					
+			case 1:
+				do {
+					System.out.println();
+					Misc.printSeperator(30);
+					Plot.cathiaForest();
+					playerChoice = getPlayerChoice(0, 6);
+					switch(playerChoice) {
+					case 0:
+						System.out.println();
+						player.playerStauts();
+						break;
+						
+					case 1:
+						System.out.println();
+						if (function.chanceAppear() == 1) {
+							Inventory.addBreadFruit();
+						}
+						break;
+							
+					case 2:
+						System.out.println();
+						if (function.chanceAppear() == 1) {
+							Inventory.addWood();
+						}
+						break;
+					
+					//THANISMA RIVER PATH
+					case 3:
+						do {
+							int chance = 0;
+							chance = Plot.setPomegranateChance(Plot.getPomegranateChance());
+
+							//Pomegranate: True
+							if (chance == 3) {
+								do {
+									
+								} while (playerChoice < 1);
+							}
+							
+							//Pomegranate: False
+							else {
+								do {
+								
+								} while (playerChoice < 1);
+							}
+							
+						} while (playerChoice <= 6);
+						break;
+						
+					case 4:
+						System.out.println();
+						Inventory.viewInventory();
+						break;
+							
+					case 5:
+						do {
+							System.out.println();
+							Misc.printSeperator(30);
+							Misc.removeItemMenu();
+							playerChoice = getPlayerChoice(0, 8);
+							switch(playerChoice) {
+							case 0:
+								System.out.println();
+								player.playerStauts();
+								break;
+									
+							case 1:
+								System.out.println();
+								Inventory.removeNormalPotion();
+								break;
+									
+							case 2:
+								System.out.println();
+								Inventory.removeHolyPotion();
+								break;
+									
+							case 3:
+								System.out.println();
+								Inventory.removeBreadFruit();
+								break;
+									
+							case 4:
+								System.out.println();
+								Inventory.removePomegranate();
+								break;
+									
+							case 5:
+								System.out.println();
+								Inventory.removeElightania();
+								break;
+									
+							case 6:
+								System.out.println();
+								Inventory.removeWood();
+								break;
+							case 7:
+								System.out.println();
+								Inventory.viewInventory();
+							}
+						} while(playerChoice < 8);
+						break;
+							
+					case 6:
+						
+							
+					}
+				} while (playerChoice != 6);
+				break;
+					
+			case 2:
+				System.out.println();
+				System.out.println("Elena: Hello stranger, don't mind me. I miss the old one - the village. "
+						+ "It was beautiful till monsters invaded. I hope you can save the village. "
+						+ "By the way, you seem hungry, here take this orange!");
+				System.out.println();
+				Inventory.addBreadFruit();
+				break;
+					
+			case 3:
+				System.out.println();
+				System.out.println("Kaiiso: Welcome to the village, I bet you are starving. "
+						+ "I used to be the best butcher in the village, but I gave up after an accident. Now I am a vegetarian, "
+						+ "I'm buiding the house, I need wood. Can you "
+						+ "get me some? I will give you my breadfruit.");
+				System.out.println();
+				Inventory.checkForWood();
+				if(Inventory.haveWood == true) {
+					Inventory.removeWood();
+					System.out.println();
+					Inventory.addBreadFruit();						
+				} else {
+					System.out.print("< You have no woods >");
+				}
+				break;
+					
+			case 4:
+				System.out.println();
+				System.out.print("Omorph: Hello Mr." + player.getPlayerName() + 
+						", My name is Omorph. I'm the major of this village. It was peacful back then. I hope"
+						+ " one day, it will be like it in the past. Hope you can defeat the monsters.");
+				break;
+					
+			case 5:
+				System.out.println();
+				Inventory.viewInventory();
+				break;
+					
+			case 6:
+				do {
+					System.out.println();
+					Misc.printSeperator(30);
+					Misc.removeItemMenu();
+					playerChoice = getPlayerChoice(0, 8);
+					switch(playerChoice) {
+					case 0:
+						System.out.println();
+						player.playerStauts();
+						break;
+							
+					case 1:
+						System.out.println();
+						Inventory.removeNormalPotion();
+						break;
+							
+					case 2:
+						System.out.println();
+						Inventory.removeHolyPotion();
+						break;
+							
+					case 3:
+						System.out.println();
+						Inventory.removeBreadFruit();
+						break;
+							
+					case 4:
+						System.out.println();
+						Inventory.removePomegranate();
+						break;
+							
+					case 5:
+						System.out.println();
+						Inventory.removeElightania();
+						break;
+							
+					case 6:
+						System.out.println();
+						Inventory.removeWood();
+						break;
+					case 7:
+						System.out.println();
+						Inventory.viewInventory();
+					}
+				} while(playerChoice < 8);
+				break;
+					
+			default:
+				System.out.println();
+				System.out.println("Only 1 - 9, except 7,8!");
+			}
+				
+					
+		} while (playerChoice < 9);
+	}
